@@ -199,6 +199,11 @@ class PlutoGridStyleConfig {
     this.enableCellBorderHorizontal = true,
     this.enableRowColorAnimation = false,
     this.gridBackgroundColor = Colors.white,
+    this.headerDecoration,
+    this.contentDecoration,
+    this.footerDecoration,
+    this.leftFrozenDecoration,
+    this.rightFrozenDecoration,
     this.rowColor = Colors.white,
     this.oddRowColor,
     this.evenRowColor,
@@ -216,8 +221,11 @@ class PlutoGridStyleConfig {
     this.activatedBorderColor = Colors.lightBlue,
     this.inactivatedBorderColor = const Color(0xFFC4C7CC),
     this.iconSize = 18,
+    this.headerSpacing,
+    this.footerSpacing,
     this.rowHeight = PlutoGridSettings.rowHeight,
     this.columnHeight = PlutoGridSettings.rowHeight,
+    this.footerHeight = PlutoGridSettings.footerHeight,
     this.columnFilterHeight = PlutoGridSettings.rowHeight,
     this.defaultColumnTitlePadding = PlutoGridSettings.columnTitlePadding,
     this.defaultColumnFilterPadding = PlutoGridSettings.columnFilterPadding,
@@ -255,6 +263,11 @@ class PlutoGridStyleConfig {
     this.enableCellBorderHorizontal = true,
     this.enableRowColorAnimation = false,
     this.gridBackgroundColor = const Color(0xFF111111),
+    this.headerDecoration,
+    this.contentDecoration,
+    this.footerDecoration,
+    this.leftFrozenDecoration,
+    this.rightFrozenDecoration,
     this.rowColor = const Color(0xFF111111),
     this.oddRowColor,
     this.evenRowColor,
@@ -272,8 +285,11 @@ class PlutoGridStyleConfig {
     this.activatedBorderColor = const Color(0xFFFFFFFF),
     this.inactivatedBorderColor = const Color(0xFF666666),
     this.iconSize = 18,
+    this.headerSpacing,
+    this.footerSpacing,
     this.rowHeight = PlutoGridSettings.rowHeight,
     this.columnHeight = PlutoGridSettings.rowHeight,
+    this.footerHeight = PlutoGridSettings.footerHeight,
     this.columnFilterHeight = PlutoGridSettings.rowHeight,
     this.defaultColumnTitlePadding = PlutoGridSettings.columnTitlePadding,
     this.defaultColumnFilterPadding = PlutoGridSettings.columnFilterPadding,
@@ -323,6 +339,39 @@ class PlutoGridStyleConfig {
   final bool enableRowColorAnimation;
 
   final Color gridBackgroundColor;
+
+  /// The decoration to be applied to the header.
+  ///
+  /// This can be used to customize the appearance of the header
+  /// by providing a [Decoration] object. If null, no decoration
+  /// will be applied.
+  final Decoration? headerDecoration;
+
+  final Decoration? contentDecoration;
+
+  /// The decoration to be applied to the footer of the PlutoGrid.
+  ///
+  /// This can be used to customize the appearance of the footer,
+  /// such as adding a background color, border, or other decorations.
+  ///
+  /// If null, no decoration will be applied.
+  final Decoration? footerDecoration;
+
+  /// A decoration to be applied to the left frozen columns in the grid.
+  ///
+  /// This can be used to customize the appearance of the left frozen columns,
+  /// such as adding a border, background color, or other visual effects.
+  ///
+  /// If null, no decoration will be applied.
+  final Decoration? leftFrozenDecoration;
+
+  /// A decoration to be applied to the right frozen columns in the grid.
+  ///
+  /// This can be used to customize the appearance of the right frozen columns,
+  /// such as adding a border, background color, or other visual effects.
+  ///
+  /// If null, no decoration will be applied.
+  final Decoration? rightFrozenDecoration;
 
   /// Default row background color
   ///
@@ -388,11 +437,20 @@ class PlutoGridStyleConfig {
   /// Icon size. (column menu, cell of popup type)
   final double iconSize;
 
+  /// The spacing between the header and the content.
+  final double? headerSpacing;
+
+  /// The spacing between the content and the footer.
+  final double? footerSpacing;
+
   /// Height of a row.
   final double rowHeight;
 
   /// Height of column.
   final double columnHeight;
+
+  /// Height of footer.
+  final double footerHeight;
 
   /// Height of column filter.
   final double columnFilterHeight;
@@ -456,6 +514,11 @@ class PlutoGridStyleConfig {
     bool? enableCellBorderHorizontal,
     bool? enableRowColorAnimation,
     Color? gridBackgroundColor,
+    Decoration? headerDecoration,
+    Decoration? contentDecoration,
+    Decoration? footerDecoration,
+    Decoration? leftFrozenDecoration,
+    Decoration? rightFrozenDecoration,
     Color? rowColor,
     PlutoOptional<Color?>? oddRowColor,
     PlutoOptional<Color?>? evenRowColor,
@@ -473,8 +536,11 @@ class PlutoGridStyleConfig {
     Color? activatedBorderColor,
     Color? inactivatedBorderColor,
     double? iconSize,
+    double? headerSpacing,
+    double? footerSpacing,
     double? rowHeight,
     double? columnHeight,
+    double? footerHeight,
     double? columnFilterHeight,
     EdgeInsets? defaultColumnTitlePadding,
     EdgeInsets? defaultColumnFilterPadding,
@@ -505,6 +571,12 @@ class PlutoGridStyleConfig {
       enableRowColorAnimation:
           enableRowColorAnimation ?? this.enableRowColorAnimation,
       gridBackgroundColor: gridBackgroundColor ?? this.gridBackgroundColor,
+      headerDecoration: headerDecoration ?? this.headerDecoration,
+      contentDecoration: contentDecoration ?? this.contentDecoration,
+      footerDecoration: footerDecoration ?? this.footerDecoration,
+      leftFrozenDecoration: leftFrozenDecoration ?? this.leftFrozenDecoration,
+      rightFrozenDecoration:
+          rightFrozenDecoration ?? this.rightFrozenDecoration,
       rowColor: rowColor ?? this.rowColor,
       oddRowColor: oddRowColor == null ? this.oddRowColor : oddRowColor.value,
       evenRowColor:
@@ -528,8 +600,11 @@ class PlutoGridStyleConfig {
       inactivatedBorderColor:
           inactivatedBorderColor ?? this.inactivatedBorderColor,
       iconSize: iconSize ?? this.iconSize,
+      headerSpacing: headerSpacing ?? this.headerSpacing,
+      footerSpacing: footerSpacing ?? this.footerSpacing,
       rowHeight: rowHeight ?? this.rowHeight,
       columnHeight: columnHeight ?? this.columnHeight,
+      footerHeight: footerHeight ?? this.footerHeight,
       columnFilterHeight: columnFilterHeight ?? this.columnFilterHeight,
       defaultColumnTitlePadding:
           defaultColumnTitlePadding ?? this.defaultColumnTitlePadding,
@@ -569,6 +644,11 @@ class PlutoGridStyleConfig {
             enableCellBorderHorizontal == other.enableCellBorderHorizontal &&
             enableRowColorAnimation == other.enableRowColorAnimation &&
             gridBackgroundColor == other.gridBackgroundColor &&
+            headerDecoration == other.headerDecoration &&
+            contentDecoration == other.contentDecoration &&
+            footerDecoration == other.footerDecoration &&
+            leftFrozenDecoration == other.leftFrozenDecoration &&
+            rightFrozenDecoration == other.rightFrozenDecoration &&
             rowColor == other.rowColor &&
             oddRowColor == other.oddRowColor &&
             evenRowColor == other.evenRowColor &&
@@ -586,8 +666,11 @@ class PlutoGridStyleConfig {
             activatedBorderColor == other.activatedBorderColor &&
             inactivatedBorderColor == other.inactivatedBorderColor &&
             iconSize == other.iconSize &&
+            headerSpacing == other.headerSpacing &&
+            footerSpacing == other.footerSpacing &&
             rowHeight == other.rowHeight &&
             columnHeight == other.columnHeight &&
+            footerHeight == other.footerHeight &&
             columnFilterHeight == other.columnFilterHeight &&
             defaultColumnTitlePadding == other.defaultColumnTitlePadding &&
             defaultColumnFilterPadding == other.defaultColumnFilterPadding &&
@@ -614,6 +697,11 @@ class PlutoGridStyleConfig {
         enableCellBorderHorizontal,
         enableRowColorAnimation,
         gridBackgroundColor,
+        headerDecoration,
+        contentDecoration,
+        footerDecoration,
+        leftFrozenDecoration,
+        rightFrozenDecoration,
         rowColor,
         oddRowColor,
         evenRowColor,
@@ -630,9 +718,12 @@ class PlutoGridStyleConfig {
         borderColor,
         activatedBorderColor,
         inactivatedBorderColor,
+        headerSpacing,
+        footerSpacing,
         iconSize,
         rowHeight,
         columnHeight,
+        footerHeight,
         columnFilterHeight,
         defaultColumnTitlePadding,
         defaultColumnFilterPadding,
@@ -1059,6 +1150,46 @@ class PlutoGridLocaleText {
     this.minute = 'Minute',
     // Common
     this.loadingText = 'Loading',
+  });
+
+  const PlutoGridLocaleText.portuguese({
+    // Menu da coluna
+    this.unfreezeColumn = 'Descongelar',
+    this.freezeColumnToStart = 'Congelar no início',
+    this.freezeColumnToEnd = 'Congelar no fim',
+    this.autoFitColumn = 'Ajuste automático',
+    this.hideColumn = 'Ocultar coluna',
+    this.setColumns = 'Definir colunas',
+    this.setFilter = 'Definir filtro',
+    this.resetFilter = 'Redefinir filtro',
+    // Popup Definir Colunas
+    this.setColumnsTitle = 'Título da coluna',
+    // Popup Filtro
+    this.filterColumn = 'Coluna',
+    this.filterType = 'Tipo',
+    this.filterValue = 'Valor',
+    this.filterAllColumns = 'Todas as colunas',
+    this.filterContains = 'Contém',
+    this.filterEquals = 'Igual a',
+    this.filterStartsWith = 'Começa com',
+    this.filterEndsWith = 'Termina com',
+    this.filterGreaterThan = 'Maior que',
+    this.filterGreaterThanOrEqualTo = 'Maior ou igual a',
+    this.filterLessThan = 'Menor que',
+    this.filterLessThanOrEqualTo = 'Menor ou igual a',
+    // Popup Data
+    this.sunday = 'Dom',
+    this.monday = 'Seg',
+    this.tuesday = 'Ter',
+    this.wednesday = 'Qua',
+    this.thursday = 'Qui',
+    this.friday = 'Sex',
+    this.saturday = 'Sáb',
+    // Popup Coluna de Tempo
+    this.hour = 'Hora',
+    this.minute = 'Minuto',
+    // Comum
+    this.loadingText = 'Carregando',
   });
 
   const PlutoGridLocaleText.french({
