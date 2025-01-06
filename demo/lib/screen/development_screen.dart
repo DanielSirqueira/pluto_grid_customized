@@ -1,7 +1,7 @@
 import 'package:faker/faker.dart' hide Color, Image;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:pluto_grid/pluto_grid.dart';
+import 'package:pluto_grid_customized/pluto_grid_customized.dart';
 import 'package:pluto_menu_bar/pluto_menu_bar.dart';
 
 import '../dummy_data/development.dart';

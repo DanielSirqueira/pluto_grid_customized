@@ -2,7 +2,7 @@ import 'dart:typed_data';
 
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
-import 'package:pluto_grid/pluto_grid.dart';
+import 'package:pluto_grid_customized/pluto_grid_customized.dart';
 
 import '../abstract_text_export.dart';
 import 'generic_pdf_controller.dart';

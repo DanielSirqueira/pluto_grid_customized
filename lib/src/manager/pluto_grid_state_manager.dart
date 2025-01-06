@@ -4,7 +4,7 @@ import 'dart:collection';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:pluto_grid/pluto_grid.dart';
+import 'package:pluto_grid_customized/pluto_grid_customized.dart';
 
 import 'state/cell_state.dart';
 import 'state/column_group_state.dart';

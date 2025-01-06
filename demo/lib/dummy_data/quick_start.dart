@@ -1,4 +1,4 @@
-import 'package:pluto_grid/pluto_grid.dart';
+import 'package:pluto_grid_customized/pluto_grid_customized.dart';
 
 class DummyData {
   List<PlutoColumn>? columns;

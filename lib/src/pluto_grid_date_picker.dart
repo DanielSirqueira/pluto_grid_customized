@@ -3,7 +3,7 @@ import 'dart:math' show min;
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
-import 'package:pluto_grid/pluto_grid.dart';
+import 'package:pluto_grid_customized/pluto_grid_customized.dart';
 
 import 'ui/ui.dart';
 

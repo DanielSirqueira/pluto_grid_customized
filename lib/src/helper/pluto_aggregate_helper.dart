@@ -1,6 +1,6 @@
 import 'package:collection/collection.dart'
     show IterableNumberExtension, IterableExtension;
-import 'package:pluto_grid/pluto_grid.dart';
+import 'package:pluto_grid_customized/pluto_grid_customized.dart';
 
 class PlutoAggregateHelper {
   static num sum({

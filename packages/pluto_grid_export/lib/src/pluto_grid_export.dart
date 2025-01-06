@@ -1,4 +1,4 @@
-import 'package:pluto_grid/pluto_grid.dart';
+import 'package:pluto_grid_customized/pluto_grid_customized.dart';
 
 import './csv/pluto_grid_csv_export.dart';
 

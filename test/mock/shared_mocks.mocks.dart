@@ -14,7 +14,7 @@ import 'package:flutter/src/foundation/assertions.dart' as _i12;
 import 'package:flutter/src/foundation/diagnostics.dart' as _i8;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i10;
-import 'package:pluto_grid/pluto_grid.dart' as _i2;
+import 'package:pluto_grid_customized/pluto_grid_customized.dart' as _i2;
 import 'package:rxdart/rxdart.dart' as _i4;
 
 // ignore_for_file: type=lint

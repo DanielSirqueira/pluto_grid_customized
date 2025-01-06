@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
-import 'package:pluto_grid/src/model/columns_types/pluto_column_type_customized.dart';
+import 'package:pluto_grid_customized/src/model/columns_types/pluto_column_type_customized.dart';
 
 abstract class PlutoColumnType {
   dynamic get defaultValue;

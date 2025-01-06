@@ -1,5 +1,5 @@
 import 'package:collection/collection.dart';
-import 'package:pluto_grid/pluto_grid.dart';
+import 'package:pluto_grid_customized/pluto_grid_customized.dart';
 
 /// Helper class for grouping rows.
 class PlutoRowGroupHelper {
