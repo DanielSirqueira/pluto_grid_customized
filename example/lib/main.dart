@@ -1,3 +1,4 @@
+import 'package:example/pluto_column_customized_bool.dart';
 import 'package:flutter/material.dart';
 import 'package:pluto_grid/pluto_grid.dart';
 
@@ -90,6 +91,11 @@ class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
         );
       },
     ),
+    PlutoColumn(
+      title: 'Deleted',
+      field: 'deleted',
+      type: PlutoColumnType.customized(PlutoColumnCustomizedBool()),
+    ),
   ];
 
   final List<PlutoRow> rows = [
@@ -102,6 +108,7 @@ class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
         'joined': PlutoCell(value: '2021-01-01'),
         'working_time': PlutoCell(value: '09:00'),
         'salary': PlutoCell(value: 300),
+        'deleted': PlutoCell(value: false),
       },
     ),
     PlutoRow(
@@ -113,6 +120,7 @@ class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
         'joined': PlutoCell(value: '2021-02-01'),
         'working_time': PlutoCell(value: '10:00'),
         'salary': PlutoCell(value: 400),
+        'deleted': PlutoCell(value: false),
       },
     ),
     PlutoRow(
@@ -124,6 +132,7 @@ class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
         'joined': PlutoCell(value: '2021-03-01'),
         'working_time': PlutoCell(value: '11:00'),
         'salary': PlutoCell(value: 700),
+        'deleted': PlutoCell(value: false),
       },
     ),
   ];
@@ -158,7 +167,31 @@ class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
           onChanged: (PlutoGridOnChangedEvent event) {
             print(event);
           },
-          configuration: const PlutoGridConfiguration(),
+          configuration: PlutoGridConfiguration(
+            style: PlutoGridStyleConfig(
+              headerDecoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              leftFrozenDecoration: BoxDecoration(
+                border: Border.all(color: Colors.black, width: 1),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.5),
+                    blurRadius: 5,
+                  ),
+                ],
+              ),
+              rightFrozenDecoration: BoxDecoration(
+                border: Border.all(color: Colors.black, width: 1),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.5),
+                    blurRadius: 5,
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
       ),
     );
